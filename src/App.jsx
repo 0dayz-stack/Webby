@@ -3,12 +3,26 @@ import React from 'react';
 export default function App() {
   const [count, setCount] = React.useState(0);
   const [name, setName] = React.useState('');
+  
+const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
 
+React.useEffect(() => {
+  document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem("theme", theme);
+}, [theme]);
+  
   return (
     <div className="app container">
       <header>
         <h1>Webby — React Starter</h1>
         <p className="lead">A small playground to learn React and build things.</p>
+     <button
+          onClick={() =>
+            setTheme(theme === "dark" ? "light" : "dark")
+          }
+        >
+          {theme === "dark" ? "Switch to Light" : "Switch to Dark"}
+        </button>   
       </header>
 
       <section className="controls card">
