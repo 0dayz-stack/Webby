@@ -3,7 +3,7 @@ import React from 'react';
 export default function App() {
   const [count, setCount] = React.useState(0);
   const [name, setName] = React.useState(
-  localStorage.getItem("Sunshine") || ""
+  localStorage.getItem("name") || "Sunshine"
 );
   
 const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
