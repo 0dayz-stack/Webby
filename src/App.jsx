@@ -15,7 +15,7 @@ React.useEffect(() => {
   
  React.useEffect(() => {
     if (name) {
-      localStorage.setItem("Sunshine", name);
+      localStorage.setItem("name", name);
     }
   }, [name]);
 
