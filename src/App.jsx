@@ -2,7 +2,9 @@ import React from 'react';
 
 export default function App() {
   const [count, setCount] = React.useState(0);
-  const [name, setName] = React.useState('');
+  const [name, setName] = React.useState(
+  localStorage.getItem("Sunshine") || ""
+);
   
 const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
 
@@ -11,11 +13,17 @@ React.useEffect(() => {
   localStorage.setItem("theme", theme);
 }, [theme]);
   
+ React.useEffect(() => {
+    if (name) {
+      localStorage.setItem("Sunshine", name);
+    }
+  }, [name]);
+
   return (
     <div className="app container">
       <header>
         <h1>Webby — React Starter</h1>
-        <p className="lead">A small playground to learn React and build things.</p>
+        <p className="lead">Create, Build, React here.</p>
      <button
           onClick={() =>
             setTheme(theme === "dark" ? "light" : "dark")
