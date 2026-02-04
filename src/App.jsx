@@ -22,7 +22,7 @@ React.useEffect(() => {
   return (
     <div className="app container">
       <header>
-        <h1>Webby — React Starter</h1>
+        <h1>Webby — Let's Go!</h1>
         <p className="lead">Create, Build, React here.</p>
      <button
           onClick={() =>
